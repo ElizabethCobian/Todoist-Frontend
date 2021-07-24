@@ -1,0 +1,15 @@
+{
+  "name": "todoist-fe",
+  "version": "1.0.0",
+  "description": "Bootcamp Todoist Frontend ",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe chrome ./pom/tests/projects.test.js"
+  },
+  "author": "Elizabeth Cobian",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "testcafe": "^1.15.0"
+  }
+}
