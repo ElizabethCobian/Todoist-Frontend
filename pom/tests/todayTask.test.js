@@ -1,7 +1,7 @@
 import loginPage from '../pages/LoginPage'
 import appToday from '../pages/appToday'
 import appUpcoming from '../pages/appUpcoming'
-import { URLS, CREDENTIALS, MESSAGES } from '../data/Constants'
+import { URLS, CREDENTIALS, MESSAGES, TASKS } from '../data/Constants'
 
 fixture('Creating Taks')    
     .page (URLS.LOGIN_URL)
@@ -20,9 +20,9 @@ test('As a user, I should be able to create a new task for Tomorrow', async t =>
     await t.expect((appUpcoming.tomorrowTask).exists).ok()
 })
 
-test('Adding multiple task ', async t => {
-    await appToday.addNewTasks(10)
-    await t.expect(await appToday.validateTaskCreated(10)).ok()
+test.only('Adding multiple task ', async t => {
+    await appToday.addNewTasks(TASKS.TASK_NUMBER.NUMBER)
+    await t.expect(await appToday.validateTaskCreated(TASKS.TASK_NUMBER.NUMBER)).ok()
 })
 
 test('As a user, I want to delete all my tasks', async t => {
