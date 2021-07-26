@@ -6,7 +6,7 @@ import { STANDAR_USER } from '../data/Roles'
 fixture('Login feature test')
     .page (URLS.LOGIN_URL)
 
-test.only('As a user, I should be able to log in successfully by providing valid credentials', async t => {
+test.meta('type','smoke')('As a user, I should be able to log in successfully by providing valid credentials', async t => {
     await t.useRole(STANDAR_USER)
     await t.expect((appToday.todayTitle).exists).ok({timeout: 10000})
 })

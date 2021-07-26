@@ -1,5 +1,4 @@
 import { URLS, CREDENTIALS, PROJECT } from '../data/Constants'
-import loginPage from '../pages/LoginPage'
 import appToday from '../pages/appToday'
 import  projects  from '../pages/projectsPage'
 import { STANDAR_USER } from '../data/Roles'
