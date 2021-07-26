@@ -73,11 +73,6 @@ class appToday {
             await t
             .click(this.checkboxTask)
         }
-
-/*         if (existingTask) {
-            await t
-                .click(this.checkboxTask)
-        } */
     }
 }
 export default new appToday

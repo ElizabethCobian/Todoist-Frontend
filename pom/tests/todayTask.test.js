@@ -20,7 +20,7 @@ test('As a user, I should be able to create a new task for Tomorrow', async t =>
     await t.expect((appUpcoming.tomorrowTask).exists).ok()
 })
 
-test.only('Adding multiple task ', async t => {
+test('Adding multiple task ', async t => {
     await appToday.addNewTasks(TASKS.TASK_NUMBER.NUMBER)
     await t.expect(await appToday.validateTaskCreated(TASKS.TASK_NUMBER.NUMBER)).ok()
 })
@@ -29,7 +29,3 @@ test('As a user, I want to delete all my tasks', async t => {
     await appToday.deleteTask()
     await t.expect((appToday.completedTask).exists).ok()
 })
-
-
-
-///cambiar el numero de adding multiple task por una constante ya que es mala práctica ponerlo aquí

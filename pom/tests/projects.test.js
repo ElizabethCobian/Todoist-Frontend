@@ -12,5 +12,5 @@ fixture('Projects')
 
 test('Creating a new project', async t => {
     await projects.addProject(PROJECT.PROJECT_NAME)
-    await t.expect((projects.addProjectTitle).exists).ok()
+    await t.expect((projects.projectAdded).exists).ok()
 })
