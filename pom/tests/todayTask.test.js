@@ -3,8 +3,6 @@ import appToday from '../pages/appToday'
 import appUpcoming from '../pages/appUpcoming'
 import { URLS, CREDENTIALS, MESSAGES } from '../data/Constants'
 
-//const dataSet = require('../data/data.json');
-
 fixture('Creating Taks')    
     .page (URLS.LOGIN_URL)
     .beforeEach(async t => {
@@ -24,7 +22,12 @@ test('As a user, I should be able to create a new task for Tomorrow', async t =>
 
 test('Adding multiple task ', async t => {
     await appToday.addNewTasks(10)
-    await t.expect(await appToday.validateTaskCreated(10)).ok() 
+    await t.expect(await appToday.validateTaskCreated(10)).ok()
+})
+
+test('As a user, I want to delete all my tasks', async t => {
+    await appToday.deleteTask()
+    await t.expect((appToday.completedTask).exists).ok()
 })
 
 

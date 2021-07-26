@@ -13,6 +13,7 @@ class appToday {
         this.dateTomorrow = Selector('.scheduler-suggestions-item-icon--tomorrow')
         this.taskItems = Selector ('.task_list_item')
         this.checkboxTask = Selector('.task_checkbox__circle')
+        this.completedTask = Selector('.completed_today')
     }
     
     //Function to create a new task (today due date)
@@ -65,6 +66,18 @@ class appToday {
         else {
             return false
         }
+    }
+    async deleteTask(){
+        let existingTask = await this.taskItems.exists;
+        while (existingTask) {
+            await t
+            .click(this.checkboxTask)
+        }
+
+/*         if (existingTask) {
+            await t
+                .click(this.checkboxTask)
+        } */
     }
 }
 export default new appToday
