@@ -34,3 +34,8 @@ export const TASK_TITLES = {
 export const PROJECT = {
     PROJECT_NAME: 'My project'
 }
+export const TASKS = {
+    TASK_NUMBER:{
+        NUMBER: 10
+    }
+}
