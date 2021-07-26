@@ -1,12 +1,13 @@
 import loginPage from '../pages/LoginPage'
 import appToday from '../pages/appToday'
 import { URLS, CREDENTIALS, MESSAGES } from '../data/Constants'
+import { STANDAR_USER } from '../data/Roles'
 
 fixture('Login feature test')
     .page (URLS.LOGIN_URL)
 
-test('As a user, I should be able to log in successfully by providing valid credentials', async t => {
-    await loginPage.doSuccessLogin(CREDENTIALS.VALID_USER.USER_EMAIL, CREDENTIALS.VALID_USER.USER_PASSWORD)
+test.only('As a user, I should be able to log in successfully by providing valid credentials', async t => {
+    await t.useRole(STANDAR_USER)
     await t.expect((appToday.todayTitle).exists).ok({timeout: 10000})
 })
 test('As a user, if I enter a null information I shouldnt be able to login and see an specif error message', async t => {
