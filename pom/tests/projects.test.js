@@ -2,11 +2,12 @@ import { URLS, CREDENTIALS, PROJECT } from '../data/Constants'
 import loginPage from '../pages/LoginPage'
 import appToday from '../pages/appToday'
 import  projects  from '../pages/projectsPage'
+import { STANDAR_USER } from '../data/Roles'
 
 fixture('Projects')
     .page (URLS.LOGIN_URL)
     .beforeEach(async t => {
-        await loginPage.doSuccessLogin(CREDENTIALS.VALID_USER.USER_EMAIL, CREDENTIALS.VALID_USER.USER_PASSWORD)
+        await t.useRole(STANDAR_USER)
         await t.expect((appToday.todayTitle).exists).ok({timeout: 10000})
     })
 
