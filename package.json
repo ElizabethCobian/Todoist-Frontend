@@ -4,7 +4,7 @@
   "description": "Bootcamp Todoist Frontend ",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome ./pom/tests/projects.test.js"
+    "test": "testcafe chrome ./pom/tests/todayTask.test.js"
   },
   "author": "Elizabeth Cobian",
   "license": "ISC",
