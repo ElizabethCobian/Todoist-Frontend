@@ -8,12 +8,29 @@
     "test-smoke": "testcafe chrome ./pom/tests --test-meta type=smoke",
     "test-projects": "testcafe chrome ./pom/tests/projects.test.js",
     "test-task": "testcafe chrome ./pom/tests/todayTask.test.js",
-    "test-login": "testcafe chrome:headless,firefox:headless ./pom/tests/login.test.js" 
+    "test-login": "testcafe chrome:headless,firefox:headless ./pom/tests/login.test.js"
   },
   "author": "Elizabeth Cobian",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
     "testcafe": "^1.15.0"
-  }
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElizabethCobian/Todoist-Frontend.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ElizabethCobian/Todoist-Frontend/issues"
+  },
+  "homepage": "https://github.com/ElizabethCobian/Todoist-Frontend#readme"
 }
