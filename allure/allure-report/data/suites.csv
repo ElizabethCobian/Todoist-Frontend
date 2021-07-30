@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Jul 26 20:06:32 CDT 2021","Mon Jul 26 20:06:39 CDT 2021","7469","","Creating Taks","","Creating Taks","As a user, I want to delete all my tasks","As a user, I want to delete all my tasks",""
+"passed","Mon Jul 26 20:06:00 CDT 2021","Mon Jul 26 20:06:15 CDT 2021","15620","","Login feature test","","Login feature test","As a user, I should be able to log in successfully by providing valid credentials","As a user, I should be able to log in successfully by providing valid credentials",""
+"passed","Mon Jul 26 20:06:10 CDT 2021","Mon Jul 26 20:06:21 CDT 2021","10610","","Creating Taks","","Creating Taks","As a user, I should be able to create a new taks for Today","As a user, I should be able to create a new taks for Today",""
+"passed","Mon Jul 26 20:06:24 CDT 2021","Mon Jul 26 20:06:38 CDT 2021","13875","","Creating Taks","","Creating Taks","Adding multiple task ","Adding multiple task ",""

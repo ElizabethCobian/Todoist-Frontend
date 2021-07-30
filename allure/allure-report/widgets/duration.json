@@ -1,0 +1,41 @@
+[ {
+  "uid" : "9e1836f952adba05",
+  "name" : "As a user, I want to delete all my tasks",
+  "time" : {
+    "start" : 1627347992028,
+    "stop" : 1627347999497,
+    "duration" : 7469
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3095e7bf7c7e4b46",
+  "name" : "As a user, I should be able to log in successfully by providing valid credentials",
+  "time" : {
+    "start" : 1627347960050,
+    "stop" : 1627347975670,
+    "duration" : 15620
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "55bc54b6adc5dba8",
+  "name" : "As a user, I should be able to create a new taks for Today",
+  "time" : {
+    "start" : 1627347970668,
+    "stop" : 1627347981278,
+    "duration" : 10610
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b6ec631d7a35378a",
+  "name" : "Adding multiple task ",
+  "time" : {
+    "start" : 1627347984551,
+    "stop" : 1627347998426,
+    "duration" : 13875
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
