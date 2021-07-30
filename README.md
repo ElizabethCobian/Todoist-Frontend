@@ -33,9 +33,9 @@ If everyting is fine you can proceed to run the diff scripts
 
 1. Running all the tests: `npm run test`
 2. Running a smoke test: `npm run test-smoke` 
-3. Runnin only the projects feature: `npm run test-projects`
-4. Runnin only the tasks feature: `npm run test-task`
-5. Runnin only the login feature: `npm run test-task`
+3. Running only the projects feature: `npm run test-projects`
+4. Running only the tasks feature: `npm run test-task`
+5. Running only the login feature: `npm run test-task`
 
 ## Using Allure Report
 The repo includes the Allure report - [Allure Documentation](https://www.npmjs.com/package/testcafe-reporter-allure)
