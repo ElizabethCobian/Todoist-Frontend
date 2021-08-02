@@ -35,7 +35,8 @@ If everyting is fine you can proceed to run the diff scripts
 2. Running a smoke test: `npm run test-smoke` 
 3. Running only the projects feature: `npm run test-projects`
 4. Running only the tasks feature: `npm run test-task`
-5. Running only the login feature: `npm run test-task`
+5. Running only the login feature: `npm run test-login`
+6. Running only the ESlint script: `npm run lint`
 
 ## Using Allure Report
 The repo includes the Allure report - [Allure Documentation](https://www.npmjs.com/package/testcafe-reporter-allure)
