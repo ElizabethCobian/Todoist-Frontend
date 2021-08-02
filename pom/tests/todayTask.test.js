@@ -11,6 +11,10 @@ fixture('Creating Taks')
     await t.useRole(STANDAR_USER)
     await t.expect((appToday.todayTitle).exists).ok({ timeout: 10000 })
   })
+  .afterEach(async t => {
+    await appToday.deleteAllTasks()
+    await t.wait(5000)
+  })
 
 // Test-happypath: Creating just one task and validating if was successfully created
 test.meta('type', 'smoke')('As a user, I should be able to create a new taks for Today', async t => {
@@ -29,10 +33,4 @@ test('As a user, I should be able to create a new task for Tomorrow', async t =>
 test.meta('type', 'smoke')('Adding multiple task ', async t => {
   await appToday.addNewTasks(TASKS.TASK_NUMBER.NUMBER)
   await t.expect(await appToday.validateTaskCreated(TASKS.TASK_NUMBER.NUMBER)).ok()
-})
-
-// Test-happypath: to delete the tasks created
-test.meta('type', 'smoke')('As a user, I want to delete all my tasks', async t => {
-  await appToday.deleteTask()
-  await t.expect((appToday.completedTask).exists).ok()
 })

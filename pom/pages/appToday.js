@@ -1,3 +1,6 @@
+/* eslint-disable new-cap */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unmodified-loop-condition */
 import { Selector, t } from 'testcafe'
 import { MESSAGES, TASK_TITLES } from '../data/Constants'
 
@@ -14,6 +17,9 @@ class appToday {
     this.taskItems = Selector('.task_list_item')
     this.checkboxTask = Selector('.task_checkbox__circle')
     this.completedTask = Selector('.completed_today')
+    this.moreActionButton = Selector('.more_actions_button')
+    this.deleteOption = Selector('.icon_menu_item__content').withExactText('Delete task')
+    this.deleteConfirmation = Selector('.ist_button.ist_button_red')
   }
 
   // Function to create a new task (today due date)
@@ -63,7 +69,7 @@ class appToday {
   // Function to validate the tasks were created correctly
   async validateTaskCreated (taskNumber) {
     const totalTask = await this.taskItems.count
-    // eslint-disable-next-line eqeqeq
+
     if (totalTask == taskNumber) {
       return true
     } else {
@@ -71,15 +77,20 @@ class appToday {
     }
   }
 
-  // Function to delete the tasks created
-  async deleteTask () {
-    const existingTask = await this.taskItems.exists
-    // eslint-disable-next-line no-unmodified-loop-condition
-    while (existingTask) {
-      await t
-        .click(this.checkboxTask)
+  // Function to delete all the tasks on the dashboard
+  async deleteAllTasks () {
+    const existingTask = await this.taskItems.count
+
+    if (existingTask > 0) {
+      for (let index = 0; index < existingTask; index++) {
+        await t
+          .hover(this.taskItems.nth(0))
+          .click(this.moreActionButton)
+          .click(this.deleteOption)
+          .click(this.deleteConfirmation)
+      }
     }
   }
 }
-// eslint-disable-next-line new-cap
+
 export default new appToday()
