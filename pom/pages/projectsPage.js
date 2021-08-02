@@ -13,6 +13,7 @@ class projects {
     this.projectAdded = Selector('#projects_list > .clickable.menu_clickable.indent_1').nth(1).withExactText('My project')
   }
 
+  // Function for the workflow to create a new project
   async addProject (name) {
     await t
       .click(this.addNewProjectButton)

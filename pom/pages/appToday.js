@@ -71,6 +71,7 @@ class appToday {
     }
   }
 
+  // Function to delete the tasks created
   async deleteTask () {
     const existingTask = await this.taskItems.exists
     // eslint-disable-next-line no-unmodified-loop-condition
