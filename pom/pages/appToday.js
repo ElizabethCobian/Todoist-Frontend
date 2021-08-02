@@ -1,79 +1,84 @@
-import { Selector, t} from 'testcafe'
+import { Selector, t } from 'testcafe'
 import { MESSAGES, TASK_TITLES } from '../data/Constants'
 
 class appToday {
-    constructor(){
-        this.todayTitle = Selector('h1, .view_header__content .simple_content').withExactText('Today')
-        this.buttonAddNewTask = Selector('button.plus_add_button')
-        this.titleTaks = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
-        this.descriptionTask = Selector('.task_editor__description_field')
-        this.buttonAddTask = Selector('button[type="submit"]')
-        this.taskCreated = Selector('.markdown_content.task_content').withExactText(MESSAGES.TASK.NEW_TAKS.TITLE)
-        this.changeDateDue = Selector('button.item_due_selector.icon_pill')
-        this.dateTomorrow = Selector('.scheduler-suggestions-item-icon--tomorrow')
-        this.taskItems = Selector ('.task_list_item')
-        this.checkboxTask = Selector('.task_checkbox__circle')
-        this.completedTask = Selector('.completed_today')
-    }
-    
-    //Function to create a new task (today due date)
-    async createNewTaskToday(title, description) {
-        await t
-            .click(this.buttonAddNewTask)
-            .typeText(this.titleTaks, title)
-            .typeText(this.descriptionTask, description)
-            .click(this.buttonAddTask)
-    }
-    
-    //Function to create a new task for (tomorrow due date)
-    async createNewTaskTomorrow(title, description){
-        await t
-            .click(this.buttonAddNewTask)
-            .typeText(this.titleTaks, title)
-            .typeText(this.descriptionTask, description)
-            .click(this.changeDateDue)
-            .click(this.dateTomorrow)
-            .click(this.buttonAddTask)
-    }
+  constructor () {
+    this.todayTitle = Selector('h1, .view_header__content .simple_content').withExactText('Today')
+    this.buttonAddNewTask = Selector('button.plus_add_button')
+    this.titleTaks = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
+    this.descriptionTask = Selector('.task_editor__description_field')
+    this.buttonAddTask = Selector('button[type="submit"]')
+    this.taskCreated = Selector('.markdown_content.task_content').withExactText(MESSAGES.TASK.NEW_TAKS.TITLE)
+    this.changeDateDue = Selector('button.item_due_selector.icon_pill')
+    this.dateTomorrow = Selector('.scheduler-suggestions-item-icon--tomorrow')
+    this.taskItems = Selector('.task_list_item')
+    this.checkboxTask = Selector('.task_checkbox__circle')
+    this.completedTask = Selector('.completed_today')
+  }
 
-    async createTask(title) {
-        let is_first_task = await this.buttonAddNewTask.exists;
+  // Function to create a new task (today due date)
+  async createNewTaskToday (title, description) {
+    await t
+      .click(this.buttonAddNewTask)
+      .typeText(this.titleTaks, title)
+      .typeText(this.descriptionTask, description)
+      .click(this.buttonAddTask)
+  }
 
-        if(is_first_task) {
-            await t
-            .click(this.buttonAddNewTask)
-            .typeText(this.titleTaks, title)
-            .click(this.buttonAddTask);
-        }
-        else {
-            await t
-            .typeText(this.titleTaks, title)
-            .click(this.buttonAddTask);
-        }
-    } 
+  // Function to create a new task for (tomorrow due date)
+  async createNewTaskTomorrow (title, description) {
+    await t
+      .click(this.buttonAddNewTask)
+      .typeText(this.titleTaks, title)
+      .typeText(this.descriptionTask, description)
+      .click(this.changeDateDue)
+      .click(this.dateTomorrow)
+      .click(this.buttonAddTask)
+  }
 
-    async addNewTasks(taskNumber){
-        for (let i = 0; i < taskNumber; i++) {
-            await this.createTask(TASK_TITLES.TITLE + i)
-        }
+  // Function to create a 2nd task without the + button to create tasks
+  async createTask (title) {
+    // eslint-disable-next-line camelcase
+    const is_first_task = await this.buttonAddNewTask.exists
+    // eslint-disable-next-line camelcase
+    if (is_first_task) {
+      await t
+        .click(this.buttonAddNewTask)
+        .typeText(this.titleTaks, title)
+        .click(this.buttonAddTask)
+    } else {
+      await t
+        .typeText(this.titleTaks, title)
+        .click(this.buttonAddTask)
     }
+  }
 
-    async validateTaskCreated(taskNumber){
-        let totalTask = await this.taskItems.count
-        if (totalTask == taskNumber) {
-            return true
-        }
-        else {
-            return false
-        }
+  // Function to add the title to the new tasks craeted
+  async addNewTasks (taskNumber) {
+    for (let i = 0; i < taskNumber; i++) {
+      await this.createTask(TASK_TITLES.TITLE + i)
     }
-    async deleteTask(){
-        let existingTask = await this.taskItems.exists;
-        while (existingTask) {
-            await t
-            .click(this.checkboxTask)
-        }
+  }
+
+  // Function to validate the tasks were created correctly
+  async validateTaskCreated (taskNumber) {
+    const totalTask = await this.taskItems.count
+    // eslint-disable-next-line eqeqeq
+    if (totalTask == taskNumber) {
+      return true
+    } else {
+      return false
     }
+  }
+
+  async deleteTask () {
+    const existingTask = await this.taskItems.exists
+    // eslint-disable-next-line no-unmodified-loop-condition
+    while (existingTask) {
+      await t
+        .click(this.checkboxTask)
+    }
+  }
 }
-export default new appToday
-
+// eslint-disable-next-line new-cap
+export default new appToday()
