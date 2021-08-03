@@ -9,7 +9,9 @@
     "test-smoke": "testcafe chrome ./pom/tests --test-meta type=smoke",
     "test-projects": "testcafe chrome ./pom/tests/projects.test.js",
     "test-task": "testcafe chrome ./pom/tests/todayTask.test.js",
-    "test-login": "testcafe chrome:headless,firefox:headless ./pom/tests/login.test.js"
+    "test-login": "testcafe chrome:headless,firefox:headless ./pom/tests/login.test.js",
+    "test-upcoming": "testcafe chrome ./pom/tests/upcoming.test.js"
+
   },
   "author": "Elizabeth Cobian",
   "license": "ISC",
