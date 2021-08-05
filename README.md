@@ -1,3 +1,6 @@
+![wizeline logo2](https://user-images.githubusercontent.com/25800070/128397445-776489fa-09ab-4965-98f4-968cc4fcb427.jpeg)
+
+
 # Todoist-Frontend
 This is a front-end automation project. In this repo, you'll find automation of the Todoist application using the TestCafe framework
 
