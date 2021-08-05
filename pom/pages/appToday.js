@@ -1,7 +1,3 @@
-/* eslint-disable camelcase */
-/* eslint-disable new-cap */
-/* eslint-disable eqeqeq */
-/* eslint-disable no-unmodified-loop-condition */
 import { Selector, t } from 'testcafe'
 import { MESSAGES, TASK_TITLES } from '../data/Constants'
 

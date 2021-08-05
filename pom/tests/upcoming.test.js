@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import appUpcoming from '../pages/appUpcoming'
 import appToday from '../pages/appToday'
 import { URLS } from '../data/Constants'

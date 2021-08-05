@@ -1,5 +1,3 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable new-cap */
 import { Selector, t } from 'testcafe'
 import { MESSAGES } from '../data/Constants'
 
