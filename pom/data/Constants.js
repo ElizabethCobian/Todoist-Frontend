@@ -2,40 +2,40 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export const URLS = {
-    LOGIN_URL: process.env.BASE_URL
+  LOGIN_URL: process.env.BASE_URL
 }
 export const CREDENTIALS = {
-    VALID_USER:{
-        USER_EMAIL: process.env.SUCCESS_USER_EMAIL,
-        USER_PASSWORD: process.env.SUCCESS_USER_PASSWORD
-    },
-    INVALID_USER:{
-        USER_EMAIL: 'invalid_user',
-        USER_PASSWORD: 'invalid_password'
-    }
+  VALID_USER: {
+    USER_EMAIL: process.env.SUCCESS_USER_EMAIL,
+    USER_PASSWORD: process.env.SUCCESS_USER_PASSWORD
+  },
+  INVALID_USER: {
+    USER_EMAIL: 'invalid_user',
+    USER_PASSWORD: 'invalid_password'
+  }
 }
 export const MESSAGES = {
-    ERROR:{
-        LOGIN_PAGE:{
-            INVALID_EMAIL: 'Invalid email address.',
-            BLANK_PASSWORD: 'Blank password.'
-        }
-    },
-    TASK:{
-        NEW_TAKS:{
-            TITLE: 'TestTsk',
-            DESCRIPTION: 'Adding new description'
-        }
+  ERROR: {
+    LOGIN_PAGE: {
+      INVALID_EMAIL: 'Invalid email address.',
+      BLANK_PASSWORD: 'Blank password.'
     }
+  },
+  TASK: {
+    NEW_TAKS: {
+      TITLE: 'TestTsk',
+      DESCRIPTION: 'Adding new description'
+    }
+  }
 }
 export const TASK_TITLES = {
-    TITLE: 'Test'
+  TITLE: 'Test'
 }
 export const PROJECT = {
-    PROJECT_NAME: 'My project'
+  PROJECT_NAME: 'My project'
 }
 export const TASKS = {
-    TASK_NUMBER:{
-        NUMBER: 10
-    }
+  TASK_NUMBER: {
+    NUMBER: 10
+  }
 }

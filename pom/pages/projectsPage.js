@@ -1,4 +1,3 @@
-/* eslint-disable new-cap */
 import { Selector, t } from 'testcafe'
 
 class projects {

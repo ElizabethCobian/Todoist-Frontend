@@ -1,6 +1,3 @@
-/* eslint-disable new-cap */
-/* eslint-disable eqeqeq */
-/* eslint-disable no-unmodified-loop-condition */
 import { Selector, t } from 'testcafe'
 import { MESSAGES, TASK_TITLES } from '../data/Constants'
 
@@ -44,9 +41,8 @@ class appToday {
 
   // Function to create a 2nd task without the + button to create tasks
   async createTask (title) {
-    // eslint-disable-next-line camelcase
     const is_first_task = await this.buttonAddNewTask.exists
-    // eslint-disable-next-line camelcase
+
     if (is_first_task) {
       await t
         .click(this.buttonAddNewTask)

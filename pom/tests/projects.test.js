@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { URLS, PROJECT } from '../data/Constants'
 import appToday from '../pages/appToday'
 import projects from '../pages/projectsPage'

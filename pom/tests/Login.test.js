@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import loginPage from '../pages/LoginPage'
 import appToday from '../pages/appToday'
 import { URLS, CREDENTIALS, MESSAGES } from '../data/Constants'
