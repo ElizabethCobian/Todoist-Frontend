@@ -20,21 +20,15 @@ export const MESSAGES = {
       INVALID_EMAIL: 'Invalid email address.',
       BLANK_PASSWORD: 'Blank password.'
     }
-  },
-  TASK: {
-    NEW_TAKS: {
-      TITLE: 'TestTsk',
-      DESCRIPTION: 'Adding new description'
-    }
   }
-}
-export const TASK_TITLES = {
-  TITLE: 'Test'
 }
 export const PROJECT = {
   PROJECT_NAME: 'My project'
 }
 export const TASKS = {
+  TASK_TITLES: {
+    TITLE: 'Test',
+  },
   TASK_NUMBER: {
     NUMBER: 10
   }
