@@ -22,7 +22,7 @@ Use the offical documentation: [NPM](https://docs.npmjs.com/getting-started)
 
 2. Install on your computer NPM
 
-## ESlint framework 
+## 3. ESlint framework 
 Use the official documentation [Eslint](https://eslint.org/docs/user-guide/getting-started)
 
 Eslint is a framework that help us to create pretty code
