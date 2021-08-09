@@ -1,5 +1,5 @@
 import { Selector, t } from 'testcafe'
-import { MESSAGES, TASK_TITLES } from '../data/Constants'
+import { TASKS } from '../data/constants'
 
 class appToday {
   constructor () {
@@ -8,7 +8,7 @@ class appToday {
     this.titleTaks = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
     this.descriptionTask = Selector('.task_editor__description_field')
     this.buttonAddTask = Selector('button[type="submit"]')
-    this.taskCreated = Selector('.markdown_content.task_content').withExactText(MESSAGES.TASK.NEW_TAKS.TITLE)
+    this.taskCreated = Selector('.markdown_content.task_content').withExactText(TASKS.TASK_TITLES.TITLE)
     this.changeDateDue = Selector('button.item_due_selector.icon_pill')
     this.dateTomorrow = Selector('.scheduler-suggestions-item-icon--tomorrow')
     this.taskItems = Selector('.task_list_item')
@@ -20,20 +20,18 @@ class appToday {
   }
 
   // Function to create a new task (today due date)
-  async createNewTaskToday (title, description) {
+  async createNewTaskToday (title) {
     await t
       .click(this.buttonAddNewTask)
       .typeText(this.titleTaks, title)
-      .typeText(this.descriptionTask, description)
       .click(this.buttonAddTask)
   }
 
   // Function to create a new task for (tomorrow due date)
-  async createNewTaskTomorrow (title, description) {
+  async createNewTaskTomorrow (title) {
     await t
       .click(this.buttonAddNewTask)
       .typeText(this.titleTaks, title)
-      .typeText(this.descriptionTask, description)
       .click(this.changeDateDue)
       .click(this.dateTomorrow)
       .click(this.buttonAddTask)
@@ -58,7 +56,7 @@ class appToday {
   // Function to add the title to the new tasks craeted
   async addNewTasks (taskNumber) {
     for (let i = 0; i < taskNumber; i++) {
-      await this.createTask(TASK_TITLES.TITLE + i)
+      await this.createTask(TASKS.TASK_TITLES.TITLE + i)
     }
   }
 

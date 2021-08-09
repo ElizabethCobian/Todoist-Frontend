@@ -1,7 +1,7 @@
 import appUpcoming from '../pages/appUpcoming'
-import appToday from '../pages/appToday'
-import { URLS } from '../data/Constants'
-import { STANDAR_USER } from '../data/Roles'
+import appToday from '../pages/basePage'
+import { URLS } from '../data/constants'
+import { STANDAR_USER } from '../data/roles'
 
 fixture('Testing section upcoming')
   .page(URLS.LOGIN_URL)

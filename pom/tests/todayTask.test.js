@@ -1,7 +1,7 @@
-import appToday from '../pages/appToday'
+import appToday from '../pages/basePage'
 import appUpcoming from '../pages/appUpcoming'
-import { URLS, MESSAGES, TASKS } from '../data/Constants'
-import { STANDAR_USER } from '../data/Roles'
+import { URLS, TASKS } from '../data/constants'
+import { STANDAR_USER } from '../data/roles'
 
 fixture('Creating Taks')
   .page(URLS.LOGIN_URL)
@@ -16,14 +16,14 @@ fixture('Creating Taks')
   })
 
 // Test-happypath: Creating just one task and validating if was successfully created
-test.meta('type', 'smoke')('As a user, I should be able to create a new taks for Today', async t => {
-  await appToday.createNewTaskToday(MESSAGES.TASK.NEW_TAKS.TITLE, MESSAGES.TASK.NEW_TAKS.DESCRIPTION)
+test.only('As a user, I should be able to create a new taks for Today', async t => {
+  await appToday.createNewTaskToday(TASKS.TASK_TITLES.TITLE)
   await t.expect((appToday.taskCreated).exists).ok()
 })
 
 // Test-happypath: Creating just one task for tomorrow due date
 test('As a user, I should be able to create a new task for Tomorrow', async t => {
-  await appToday.createNewTaskTomorrow(MESSAGES.TASK.NEW_TAKS.TITLE, MESSAGES.TASK.NEW_TAKS.DESCRIPTION)
+  await appToday.createNewTaskToday(TASKS.TASK_TITLES.TITLE)
   await appUpcoming.upcomingSection()
   await t.expect((appUpcoming.tomorrowTask).exists).ok()
 })

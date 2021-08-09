@@ -1,10 +1,10 @@
 import { Selector, t } from 'testcafe'
-import { MESSAGES } from '../data/Constants'
+import { TASKS } from '../data/constants'
 
 class appUpcoming {
   constructor () {
     this.upcomingSectionButton = Selector('.item_content').withExactText('Upcoming')
-    this.tomorrowTask = Selector('.markdown_content.task_content').withExactText(MESSAGES.TASK.NEW_TAKS.TITLE)
+    this.tomorrowTask = Selector('.markdown_content.task_content').withExactText(TASKS.TASK_TITLES.TITLE)
     this.plusButton = Selector('.plus_add_button')
     this.titleTaks = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
     this.addTaskButton = Selector('button[type="submit"]')
