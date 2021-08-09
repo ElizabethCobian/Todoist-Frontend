@@ -1,7 +1,7 @@
 import appToday from '../pages/appToday'
 import appUpcoming from '../pages/appUpcoming'
-import { URLS, MESSAGES, TASKS } from '../data/Constants'
-import { STANDAR_USER } from '../data/Roles'
+import { URLS, MESSAGES, TASKS } from '../data/constants'
+import { STANDAR_USER } from '../data/roles'
 
 fixture('Creating Taks')
   .page(URLS.LOGIN_URL)

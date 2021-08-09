@@ -1,5 +1,5 @@
 import { Selector, t } from 'testcafe'
-import { MESSAGES } from '../data/Constants'
+import { MESSAGES } from '../data/constants'
 
 class appUpcoming {
   constructor () {

@@ -1,7 +1,7 @@
-import { URLS, PROJECT } from '../data/Constants'
+import { URLS, PROJECT } from '../data/constants'
 import appToday from '../pages/appToday'
 import projects from '../pages/projectsPage'
-import { STANDAR_USER } from '../data/Roles'
+import { STANDAR_USER } from '../data/roles'
 
 fixture('Projects')
   .page(URLS.LOGIN_URL)

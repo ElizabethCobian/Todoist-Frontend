@@ -1,7 +1,7 @@
-import loginPage from '../pages/LoginPage'
+import loginPage from '../pages/loginPage'
 import appToday from '../pages/appToday'
-import { URLS, CREDENTIALS, MESSAGES } from '../data/Constants'
-import { STANDAR_USER } from '../data/Roles'
+import { URLS, CREDENTIALS, MESSAGES } from '../data/constants'
+import { STANDAR_USER } from '../data/roles'
 
 fixture('Login feature test')
   .page(URLS.LOGIN_URL)
