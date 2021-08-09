@@ -1,5 +1,5 @@
 import { URLS, PROJECT } from '../data/constants'
-import appToday from '../pages/appToday'
+import appToday from '../pages/basePage'
 import projects from '../pages/projectsPage'
 import { STANDAR_USER } from '../data/roles'
 

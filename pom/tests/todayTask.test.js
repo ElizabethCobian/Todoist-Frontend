@@ -1,4 +1,4 @@
-import appToday from '../pages/appToday'
+import appToday from '../pages/basePage'
 import appUpcoming from '../pages/appUpcoming'
 import { URLS, TASKS } from '../data/constants'
 import { STANDAR_USER } from '../data/roles'

@@ -24,16 +24,14 @@ class appToday {
     await t
       .click(this.buttonAddNewTask)
       .typeText(this.titleTaks, title)
-      //.typeText(this.descriptionTask, description)
       .click(this.buttonAddTask)
   }
 
   // Function to create a new task for (tomorrow due date)
-  async createNewTaskTomorrow (title, description) {
+  async createNewTaskTomorrow (title) {
     await t
       .click(this.buttonAddNewTask)
       .typeText(this.titleTaks, title)
-      .typeText(this.descriptionTask, description)
       .click(this.changeDateDue)
       .click(this.dateTomorrow)
       .click(this.buttonAddTask)

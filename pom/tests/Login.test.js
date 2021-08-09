@@ -1,5 +1,5 @@
 import loginPage from '../pages/loginPage'
-import appToday from '../pages/appToday'
+import appToday from '../pages/basePage'
 import { URLS, CREDENTIALS, MESSAGES } from '../data/constants'
 import { STANDAR_USER } from '../data/roles'
 
