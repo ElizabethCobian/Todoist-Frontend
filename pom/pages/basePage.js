@@ -17,6 +17,7 @@ class appToday {
     this.moreActionButton = Selector('.more_actions_button')
     this.deleteOption = Selector('.icon_menu_item__content').withExactText('Delete task')
     this.deleteConfirmation = Selector('.ist_button.ist_button_red')
+    this.upcomingSectionButton = Selector('.item_content').withExactText('Upcoming')
   }
 
   // Function to create a new task (today due date)
@@ -84,6 +85,10 @@ class appToday {
           .click(this.deleteConfirmation)
       }
     }
+  }
+  async upcomingSection () {
+    await t
+      .click(this.upcomingSectionButton)
   }
 }
 

@@ -15,7 +15,7 @@ fixture('Testing section upcoming')
   })
 
 test('Adding task in the Upcoming section with tomorrow due', async t => {
-  await appUpcoming.upcomingSection()
+  await appToday.upcomingSection()
   await appToday.deleteAllTasks()
   await appUpcoming.newTaskTomorrow('Title')
   await t.expect((appToday.taskItems).exists).ok()
