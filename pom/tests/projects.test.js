@@ -1,4 +1,4 @@
-import { URLS, PROJECT } from '../data/constants'
+import { URLS, PROJECT, TIMEOUTS } from '../data/constants'
 import basePage from '../pages/basePage'
 import projects from '../pages/projectsPage'
 import { STANDAR_USER } from '../data/roles'
@@ -9,7 +9,7 @@ fixture('Projects')
   // BeforeEach: Confirming I'm doing login with the correctly
   .beforeEach(async t => {
     await t.useRole(STANDAR_USER)
-    await t.expect((basePage.todayTitle).exists).ok({ timeout: 10000 })
+    await t.expect((basePage.todayTitle).exists).ok({ timeout: TIMEOUTS.ASSERTION_TIMEOUT })
   })
 
 // Test-happypath: Creating a new project

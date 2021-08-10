@@ -8,7 +8,7 @@ fixture('Creating Taks')
   // BeforeEach: Confirming I'm doing login with the correct user and I'm on the expected page
   .beforeEach(async t => {
     await t.useRole(STANDAR_USER)
-    await t.expect((basePage.todayTitle).exists).ok({ timeout: 10000 })
+    await t.expect((basePage.todayTitle).exists).ok({ timeout: TIMEOUTS.ASSERTION_TIMEOUT })
   })
   .afterEach(async t => {
     await basePage.deleteAllTasks()
