@@ -1,7 +1,7 @@
-import upcomingPage from '../pages/upcomingPage'
-import basePage from '../pages/basePage'
-import { URLS, TIMEOUTS } from '../data/constants'
-import { STANDAR_USER } from '../data/roles'
+import upcomingPage from '../pages/UpcomingPage'
+import basePage from '../pages/BasePage'
+import { URLS, TIMEOUTS } from '../data/Constants'
+import { STANDAR_USER } from '../data/Roles'
 
 fixture('Testing section upcoming')
   .page(URLS.LOGIN_URL)

@@ -1,7 +1,7 @@
-import loginPage from '../pages/loginPage'
-import basePage from '../pages/basePage'
-import { URLS, CREDENTIALS, MESSAGES, TIMEOUTS } from '../data/constants'
-import { STANDAR_USER } from '../data/roles'
+import loginPage from '../pages/LoginPage'
+import basePage from '../pages/BasePage'
+import { URLS, CREDENTIALS, MESSAGES, TIMEOUTS } from '../data/Constants'
+import { STANDAR_USER } from '../data/Roles'
 
 fixture('Login feature test')
   .page(URLS.LOGIN_URL)

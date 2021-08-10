@@ -1,7 +1,7 @@
-import basePage from '../pages/basePage'
-import upcomingPage from '../pages/upcomingPage'
-import { URLS, TASKS, TIMEOUTS } from '../data/constants'
-import { STANDAR_USER } from '../data/roles'
+import basePage from '../pages/BasePage'
+import upcomingPage from '../pages/UpcomingPage'
+import { URLS, TASKS, TIMEOUTS } from '../data/Constants'
+import { STANDAR_USER } from '../data/Roles'
 
 fixture('Creating Taks')
   .page(URLS.LOGIN_URL)

@@ -1,7 +1,7 @@
-import { URLS, PROJECT, TIMEOUTS } from '../data/constants'
-import basePage from '../pages/basePage'
-import projects from '../pages/projectsPage'
-import { STANDAR_USER } from '../data/roles'
+import { URLS, PROJECT, TIMEOUTS } from '../data/Constants'
+import basePage from '../pages/BasePage'
+import projects from '../pages/ProjectsPage'
+import { STANDAR_USER } from '../data/Roles'
 
 fixture('Projects')
   .page(URLS.LOGIN_URL)

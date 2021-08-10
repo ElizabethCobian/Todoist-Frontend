@@ -1,5 +1,5 @@
 import { Selector, t } from 'testcafe'
-import { TASKS } from '../data/constants'
+import { TASKS } from '../data/Constants'
 
 class upcomingPage {
   constructor () {
