@@ -1,5 +1,5 @@
 import basePage from '../pages/basePage'
-import upcomingPage from '../pages/appUpcoming'
+import upcomingPage from '../pages/upcomingPage'
 import { URLS, TASKS } from '../data/constants'
 import { STANDAR_USER } from '../data/roles'
 

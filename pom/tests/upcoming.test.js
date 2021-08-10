@@ -1,4 +1,4 @@
-import upcomingPage from '../pages/appUpcoming'
+import upcomingPage from '../pages/upcomingPage'
 import basePage from '../pages/basePage'
 import { URLS } from '../data/constants'
 import { STANDAR_USER } from '../data/roles'
