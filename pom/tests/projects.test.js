@@ -14,6 +14,7 @@ fixture('Projects')
 
 // Test-happypath: Creating a new project
 test('Creating a new project', async t => {
-  await projects.addProject(PROJECT.PROJECT_NAME)
+  await appToday.addProject()
+  await projects.createProjectModal(PROJECT.PROJECT_NAME)
   await t.expect((projects.projectAdded).exists).ok()
 })

@@ -2,7 +2,6 @@ import { Selector, t } from 'testcafe'
 
 class projects {
   constructor () {
-    this.addNewProjectButton = Selector('button.adder_icon')
     this.addProjectTitle = Selector('.reactist_modal_box__header')
     this.nameProjectInput = Selector('#edit_project_modal_field_name')
     this.selectDropdown = Selector('.color_dropdown_toggle.form_field_control')
@@ -13,9 +12,8 @@ class projects {
   }
 
   // Function for the workflow to create a new project
-  async addProject (name) {
+  async createProjectModal (name) {
     await t
-      .click(this.addNewProjectButton)
       .typeText(this.nameProjectInput, name)
       .click(this.selectDropdown)
       .click(this.selectColor)
