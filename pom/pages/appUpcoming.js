@@ -1,7 +1,7 @@
 import { Selector, t } from 'testcafe'
 import { TASKS } from '../data/constants'
 
-class appUpcoming {
+class upcomingPage {
   constructor () {
     this.tomorrowTask = Selector('.markdown_content.task_content').withExactText(TASKS.TASK_TITLES.TITLE)
     this.plusButton = Selector('.plus_add_button')
@@ -20,4 +20,4 @@ class appUpcoming {
   }
 }
 
-export default new appUpcoming()
+export default new upcomingPage()

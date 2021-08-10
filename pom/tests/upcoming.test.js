@@ -1,5 +1,5 @@
-import appUpcoming from '../pages/appUpcoming'
-import appToday from '../pages/basePage'
+import upcomingPage from '../pages/appUpcoming'
+import basePage from '../pages/basePage'
 import { URLS } from '../data/constants'
 import { STANDAR_USER } from '../data/roles'
 
@@ -8,15 +8,15 @@ fixture('Testing section upcoming')
 
   .beforeEach(async t => {
     await t.useRole(STANDAR_USER)
-    await t.expect((appToday.todayTitle).exists).ok({ timeout: 10000 })
+    await t.expect((basePage.todayTitle).exists).ok({ timeout: 10000 })
   })
   .afterEach(async t => {
     await t.wait(5000)
   })
 
 test('Adding task in the Upcoming section with tomorrow due', async t => {
-  await appToday.upcomingSection()
-  await appToday.deleteAllTasks()
-  await appUpcoming.newTaskTomorrow('Title')
-  await t.expect((appToday.taskItems).exists).ok()
+  await basePage.upcomingSection()
+  await basePage.deleteAllTasks()
+  await upcomingPage.newTaskTomorrow('Title')
+  await t.expect((basePage.taskItems).exists).ok()
 })

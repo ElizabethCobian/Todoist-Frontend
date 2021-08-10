@@ -1,7 +1,7 @@
 import { Selector, t } from 'testcafe'
 import { TASKS } from '../data/constants'
 
-class appToday {
+class basePage {
   constructor () {
     //Buttons - actions
     this.buttonAddNewTask = Selector('button.plus_add_button')
@@ -102,4 +102,4 @@ class appToday {
     }
 }
 
-export default new appToday()
+export default new basePage()
