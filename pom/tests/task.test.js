@@ -1,6 +1,6 @@
 import basePage from '../pages/basePage'
 import upcomingPage from '../pages/upcomingPage'
-import { URLS, TASKS } from '../data/constants'
+import { URLS, TASKS, TIMEOUTS } from '../data/constants'
 import { STANDAR_USER } from '../data/roles'
 
 fixture('Creating Taks')
@@ -12,7 +12,7 @@ fixture('Creating Taks')
   })
   .afterEach(async t => {
     await basePage.deleteAllTasks()
-    await t.wait(5000)
+    await t.wait(TIMEOUTS.WAIT_TIMEOUT)
   })
 
 // Test-happypath: Creating just one task and validating if was successfully created

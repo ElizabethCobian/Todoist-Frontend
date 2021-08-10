@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./pom",
+    "lint-init": "eslint --init",
     "test": "testcafe chrome:headless ./pom/tests/todayTask.test.js",
     "test-smoke": "testcafe chrome ./pom/tests --test-meta type=smoke",
     "test-projects": "testcafe chrome:headless ./pom/tests/projects.test.js",

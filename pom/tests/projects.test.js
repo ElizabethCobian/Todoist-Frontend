@@ -6,7 +6,7 @@ import { STANDAR_USER } from '../data/roles'
 fixture('Projects')
   .page(URLS.LOGIN_URL)
 
-  // BeforeEach: Confirming I'm doing login with the correct user and I'm on the expected page
+  // BeforeEach: Confirming I'm doing login with the correctly
   .beforeEach(async t => {
     await t.useRole(STANDAR_USER)
     await t.expect((basePage.todayTitle).exists).ok({ timeout: 10000 })
