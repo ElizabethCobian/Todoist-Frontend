@@ -1,22 +1,25 @@
 import { Selector, t } from 'testcafe'
-import { TASKS } from '../data/constants'
+import { TASKS } from '../data/Constants'
 
-class appToday {
+class basePage {
   constructor () {
-    this.todayTitle = Selector('h1, .view_header__content .simple_content').withExactText('Today')
+    //Buttons - actions
     this.buttonAddNewTask = Selector('button.plus_add_button')
-    this.titleTaks = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
-    this.descriptionTask = Selector('.task_editor__description_field')
     this.buttonAddTask = Selector('button[type="submit"]')
+    this.moreActionButton = Selector('.more_actions_button')
+    this.deleteOption = Selector('.icon_menu_item__content').withExactText('Delete task')
+    this.deleteConfirmation = Selector('.ist_button.ist_button_red')
+    // Elements
+    this.todayTitle = Selector('h1, .view_header__content .simple_content').withExactText('Today')
+    this.titleTaks = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
     this.taskCreated = Selector('.markdown_content.task_content').withExactText(TASKS.TASK_TITLES.TITLE)
     this.changeDateDue = Selector('button.item_due_selector.icon_pill')
     this.dateTomorrow = Selector('.scheduler-suggestions-item-icon--tomorrow')
     this.taskItems = Selector('.task_list_item')
-    this.checkboxTask = Selector('.task_checkbox__circle')
     this.completedTask = Selector('.completed_today')
-    this.moreActionButton = Selector('.more_actions_button')
-    this.deleteOption = Selector('.icon_menu_item__content').withExactText('Delete task')
-    this.deleteConfirmation = Selector('.ist_button.ist_button_red')
+    //Left-Menu
+    this.upcomingSectionButton = Selector('.item_content').withExactText('Upcoming')
+    this.addNewProjectButton = Selector('button.adder_icon')
   }
 
   // Function to create a new task (today due date)
@@ -85,6 +88,18 @@ class appToday {
       }
     }
   }
+
+  // Function to access into the Upcoming section
+  async upcomingSection () {
+    await t
+      .click(this.upcomingSectionButton)
+  }
+
+  // Function to click plus button to create a new project
+  async addProject () {
+    await t
+      .click(this.addNewProjectButton)
+    }
 }
 
-export default new appToday()
+export default new basePage()

@@ -33,3 +33,7 @@ export const TASKS = {
     NUMBER: 10
   }
 }
+export const TIMEOUTS = {
+  ASSERTION_TIMEOUT: 10000,
+  WAIT_TIMEOUT: 2000
+}
