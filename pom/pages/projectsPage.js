@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { Selector, t } from 'testcafe'
 import basePage from '../pages/BasePage'
+import { PROJECT } from '../data/Constants'
 
 class projects {
   constructor () {
@@ -16,7 +17,7 @@ class projects {
     this.addProjectTitle = Selector('.reactist_modal_box__header')
     this.nameProjectInput = Selector('#edit_project_modal_field_name')
     this.selectDropdown = Selector('.color_dropdown_toggle.form_field_control')
-    this.selectColor = Selector('.color_dropdown_select__name').withExactText('Teal')
+    this.selectColor = Selector('.color_dropdown_select__name').withExactText(PROJECT.FAVORITE_PROJECT.COLOR)
     this.addFavoriteCheck = Selector('.reactist_switch')
     this.addProjectButton = Selector('.ist_button.ist_button_red').withExactText('Add')
   }
@@ -56,6 +57,17 @@ class projects {
     } else {
       return false
     }
+  }
+
+  async validateProjectV2 (projectName, projectColor, isFavorite = false) {
+    await t.expect(this.projectNameInput.value).contains(projectName)
+    await t.expect(this.projectColorDropdown.innerText).contains(projectColor)
+    if (isFavorite == true) {
+      await t.expect(this.projectFavoriteCheckbox.hasClass('reactist_switch--checked')).ok()
+    } else {
+      await t.expect(this.projectFavoriteCheckbox.hasClass('reactist_switch--checked')).notOk()
+    }
+    return false
   }
 }
 

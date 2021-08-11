@@ -19,7 +19,7 @@ fixture('Projects')
 // Test-happypath: Creating a new project
 test('Creating a new project', async t => {
   await basePage.addProject()
-  await projects.createProjectModal(PROJECT.FAVORITE_PROJECT.NAME)
+  await projects.createProjectModal(PROJECT.FAVORITE_PROJECT.NAME, PROJECT.FAVORITE_PROJECT.COLOR)
   await projects.editProjectModal()
-  await t.expect(projects.validateProject(PROJECT.FAVORITE_PROJECT.NAME, PROJECT.FAVORITE_PROJECT.COLOR, PROJECT.FAVORITE_PROJECT.IS_FAVORITE))
+  await t.expect(projects.validateProjectV2(PROJECT.FAVORITE_PROJECT.NAME, PROJECT.FAVORITE_PROJECT.COLOR, PROJECT.FAVORITE_PROJECT.IS_FAVORITE)).ok()
 })

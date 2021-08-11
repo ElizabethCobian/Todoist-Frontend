@@ -31,7 +31,7 @@ export const PROJECT = {
 }
 export const TASKS = {
   TASK_TITLES: {
-    TITLE: 'Test',
+    TITLE: 'Test'
   },
   TASK_NUMBER: {
     NUMBER: 10
