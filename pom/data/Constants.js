@@ -23,7 +23,11 @@ export const MESSAGES = {
   }
 }
 export const PROJECT = {
-  PROJECT_NAME: 'My project'
+  FAVORITE_PROJECT: {
+    NAME: 'My project',
+    COLOR: 'Teal',
+    IS_FAVORITE: true
+  }
 }
 export const TASKS = {
   TASK_TITLES: {

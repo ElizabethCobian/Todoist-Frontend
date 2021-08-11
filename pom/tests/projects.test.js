@@ -10,11 +10,16 @@ fixture('Projects')
   .beforeEach(async t => {
     await t.useRole(STANDAR_USER)
     await t.expect((basePage.todayTitle).exists).ok({ timeout: TIMEOUTS.ASSERTION_TIMEOUT })
+    await basePage.deleteProjects()
+  })
+  .afterEach(async t => {
+    await t.wait(TIMEOUTS.WAIT_TIMEOUT)
   })
 
 // Test-happypath: Creating a new project
 test('Creating a new project', async t => {
   await basePage.addProject()
-  await projects.createProjectModal(PROJECT.PROJECT_NAME)
-  await t.expect((projects.projectAdded).exists).ok()
+  await projects.createProjectModal(PROJECT.FAVORITE_PROJECT.NAME)
+  await projects.editProjectModal()
+  await t.expect(projects.validateProject(PROJECT.FAVORITE_PROJECT.NAME, PROJECT.FAVORITE_PROJECT.COLOR, PROJECT.FAVORITE_PROJECT.IS_FAVORITE))
 })

@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-class-members */
 import { Selector, t } from 'testcafe'
 import { TASKS } from '../data/Constants'
 
@@ -20,6 +21,9 @@ class basePage {
     //Left-Menu
     this.upcomingSectionButton = Selector('.item_content').withExactText('Upcoming')
     this.addNewProjectButton = Selector('button.adder_icon')
+    this.projectItems = Selector('.clickable.menu_clickable.indent_1')
+    this.projectIconMenu = Selector('.icon.menu.gear_menu')
+    this.projectDeleteOption = Selector('#menu_delete_text')
   }
 
   // Function to create a new task (today due date)
@@ -100,6 +104,27 @@ class basePage {
     await t
       .click(this.addNewProjectButton)
     }
+
+      // Function to delete all the projects
+  async deleteProjects () {
+    const existingProject = await this.projectItems.count
+
+    if (existingProject > 0) {
+      for (let index = 0; index < existingProject; index++) {
+        await t
+          .hover(this.projectItems.nth(0))
+          .click(this.projectItems)
+          .click(this.projectIconMenu)
+          .click(this.projectDeleteOption)
+          .click(this.deleteConfirmation)
+      }
+    }
+  }
+
+  async clickOnProject () {
+    await t
+      .click(this.projectItems)
+  }
 }
 
 export default new basePage()
