@@ -9,9 +9,9 @@ fixture('Creating Taks')
   .beforeEach(async t => {
     await t.useRole(STANDAR_USER)
     await t.expect((basePage.todayTitle).exists).ok({ timeout: TIMEOUTS.ASSERTION_TIMEOUT })
+    await basePage.deleteAllTasks()
   })
   .afterEach(async t => {
-    await basePage.deleteAllTasks()
     await t.wait(TIMEOUTS.WAIT_TIMEOUT)
   })
 
@@ -22,10 +22,12 @@ test('As a user, I should be able to create a new taks for Today', async t => {
 })
 
 // Test-happypath: Creating just one task for tomorrow due date
-test('As a user, I should be able to create a new task for Tomorrow', async t => {
-  await basePage.createNewTaskToday(TASKS.TASK_TITLES.TITLE)
+test.only('As a user, I should be able to create a new task for Tomorrow', async t => {
   await basePage.upcomingSection()
-  await t.expect((upcomingPage.tomorrowTask).exists).ok()
+  await basePage.deleteAllTasks()
+  await upcomingPage.newTaskTomorrow(TASKS.TASK_TITLES.TITLE)
+  await upcomingPage.openTask()
+  await t.expect((upcomingPage.tomorrowLabel).exists).ok()
 })
 
 // Test-happypath: Adding and validating the creation of multiple tasks
