@@ -34,7 +34,8 @@ export const TASKS = {
     TITLE: 'Test'
   },
   TASK_NUMBER: {
-    NUMBER: 10
+    MAXIMO_NUMBER: 10,
+    MINIMO_NUMBER: 2
   }
 }
 export const TIMEOUTS = {

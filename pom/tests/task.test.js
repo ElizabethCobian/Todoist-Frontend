@@ -22,7 +22,7 @@ test('As a user, I should be able to create a new taks for Today', async t => {
 })
 
 // Test-happypath: Creating just one task for tomorrow due date
-test.only('As a user, I should be able to create a new task for Tomorrow', async t => {
+test('As a user, I should be able to create a new task for Tomorrow', async t => {
   await basePage.upcomingSection()
   await basePage.deleteAllTasks()
   await upcomingPage.newTaskTomorrow(TASKS.TASK_TITLES.TITLE)
@@ -31,7 +31,7 @@ test.only('As a user, I should be able to create a new task for Tomorrow', async
 })
 
 // Test-happypath: Adding and validating the creation of multiple tasks
-test.meta('type', 'smoke')('Adding multiple task ', async t => {
-  await basePage.addNewTasks(TASKS.TASK_NUMBER.NUMBER)
-  await t.expect(await basePage.validateTaskCreated(TASKS.TASK_NUMBER.NUMBER)).ok()
+test.only('Adding multiple task ', async t => {
+  await basePage.addNewTasks(TASKS.TASK_TITLES.TITLE, TASKS.TASK_NUMBER.MINIMO_NUMBER)
+  await t.expect(await basePage.validateMultipleTasks(TASKS.TASK_TITLES.TITLE, TASKS.TASK_NUMBER.MINIMO_NUMBER)).ok()
 })

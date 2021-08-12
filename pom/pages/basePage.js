@@ -61,9 +61,9 @@ class basePage {
   }
 
   // Function to add the title to the new tasks craeted
-  async addNewTasks (taskNumber) {
+  async addNewTasks (taskTitle, taskNumber) {
     for (let i = 0; i < taskNumber; i++) {
-      await this.createTask(TASKS.TASK_TITLES.TITLE + i)
+      await this.createTask(taskTitle + i)
     }
   }
 
@@ -75,6 +75,12 @@ class basePage {
       return true
     } else {
       return false
+    }
+  }
+
+  async validateMultipleTasks (taskTitle, numberOfTasks) {
+    for (let i = 0; i < numberOfTasks; i++) {
+      await t.expect(this.taskItems.nth(i).innerText).contains(taskTitle + i)
     }
   }
 

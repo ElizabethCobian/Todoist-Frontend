@@ -67,7 +67,7 @@ class projects {
     } else {
       await t.expect(this.projectFavoriteCheckbox.hasClass('reactist_switch--checked')).notOk()
     }
-    return false
+    return true
   }
 }
 

@@ -13,13 +13,13 @@ fixture('Projects')
     await basePage.deleteProjects()
   })
   .afterEach(async t => {
-    await t.wait(TIMEOUTS.WAIT_TIMEOUT)
+    await t.wait(2000)
   })
 
 // Test-happypath: Creating a new project
 test('Creating a new project', async t => {
   await basePage.addProject()
-  await projects.createProjectModal(PROJECT.FAVORITE_PROJECT.NAME, PROJECT.FAVORITE_PROJECT.COLOR)
+  await projects.createProjectModal(PROJECT.FAVORITE_PROJECT.NAME)
   await projects.editProjectModal()
-  await t.expect(projects.validateProjectV2(PROJECT.FAVORITE_PROJECT.NAME, PROJECT.FAVORITE_PROJECT.COLOR, PROJECT.FAVORITE_PROJECT.IS_FAVORITE)).ok()
+  await t.expect(await projects.validateProjectV2(PROJECT.FAVORITE_PROJECT.NAME, PROJECT.FAVORITE_PROJECT.COLOR, PROJECT.FAVORITE_PROJECT.IS_FAVORITE)).ok()
 })
