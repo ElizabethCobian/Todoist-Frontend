@@ -79,8 +79,16 @@ class basePage {
   }
 
   async validateMultipleTasks (taskTitle, numberOfTasks) {
+    const totalTask = await this.taskItems.count
+
     for (let i = 0; i < numberOfTasks; i++) {
       await t.expect(this.taskItems.nth(i).innerText).contains(taskTitle + i)
+    }
+
+    if (totalTask == numberOfTasks) {
+      return true
+    } else {
+      return false
     }
   }
 
