@@ -1,4 +1,5 @@
 import basePage from '../pages/BasePage'
+import todayPage from '../pages/TodayPage'
 import upcomingPage from '../pages/UpcomingPage'
 import { URLS, TASKS, TIMEOUTS } from '../data/Constants'
 import { STANDAR_USER } from '../data/Roles'
@@ -17,7 +18,7 @@ fixture('Creating Taks')
 
 // Test-happypath: Creating just one task and validating if was successfully created
 test('As a user, I should be able to create a new taks for Today', async t => {
-  await basePage.createNewTaskToday(TASKS.TASK_TITLES.TITLE)
+  await todayPage.createNewTaskToday(TASKS.TASK_TITLES.TITLE)
   await t.expect((basePage.taskCreated).exists).ok()
 })
 
@@ -31,7 +32,7 @@ test('As a user, I should be able to create a new task for Tomorrow', async t =>
 })
 
 // Test-happypath: Adding and validating the creation of multiple tasks
-test.only('Adding multiple task ', async t => {
-  await basePage.addNewTasks(TASKS.TASK_TITLES.TITLE, TASKS.TASK_NUMBER.MINIMO_NUMBER)
-  await t.expect(await basePage.validateMultipleTasks(TASKS.TASK_TITLES.TITLE, TASKS.TASK_NUMBER.MINIMO_NUMBER)).ok()
+test('Adding multiple task ', async t => {
+  await todayPage.addNewTasks(TASKS.TASK_TITLES.TITLE, TASKS.TASK_NUMBER.MINIMO_NUMBER)
+  await t.expect(await todayPage.validateMultipleTasks(TASKS.TASK_TITLES.TITLE, TASKS.TASK_NUMBER.MINIMO_NUMBER)).ok()
 })
