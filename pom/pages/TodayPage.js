@@ -10,6 +10,7 @@ class todayPage {
         this.deleteConfirmation = Selector('.ist_button.ist_button_red')
         this.titleTaks = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
         this.taskItems = Selector('.task_list_item')
+
     }
 
       // Function to create a new task (today due date)
@@ -20,7 +21,7 @@ class todayPage {
       .click(this.buttonAddTask)
     }
 
-    async createTask (title) {
+    async createTask(title) {
     const is_first_task = await this.buttonAddNewTask.exists
 
     if (is_first_task) {
@@ -36,13 +37,13 @@ class todayPage {
     }
 
     // Function to add the title to the new tasks craeted
-    async addNewTasks (taskTitle, taskNumber) {
+    async addNewTasks(taskTitle, taskNumber) {
     for (let i = 0; i < taskNumber; i++) {
       await this.createTask(taskTitle + i)
         }
     }
 
-    async validateMultipleTasks (taskTitle, numberOfTasks) {
+    async validateMultipleTasks(taskTitle, numberOfTasks) {
         const totalTask = await this.taskItems.count
 
         for (let i = 0; i < numberOfTasks; i++) {
@@ -54,8 +55,7 @@ class todayPage {
         } else {
           return false
         }
-      }
-
+    }
 }
 
 export default new todayPage()

@@ -19,15 +19,13 @@ fixture('Creating Taks')
 // Test-happypath: Creating just one task and validating if was successfully created
 test('As a user, I should be able to create a new taks for Today', async t => {
   await todayPage.createNewTaskToday(TASKS.TASK_TITLES.TITLE)
-  await t.expect((basePage.taskCreated).exists).ok()
+  await t.expect((basePage.taskName).exists).ok()
 })
 
 // Test-happypath: Creating just one task for tomorrow due date
-test('As a user, I should be able to create a new task for Tomorrow', async t => {
+test.only('As a user, I should be able to create a new task for Tomorrow', async t => {
   await basePage.upcomingSection()
-  await basePage.deleteAllTasks()
   await upcomingPage.newTaskTomorrow(TASKS.TASK_TITLES.TITLE)
-  await upcomingPage.openTask()
   await t.expect((upcomingPage.tomorrowLabel).exists).ok()
 })
 

@@ -18,10 +18,7 @@ class upcomingPage {
       .typeText(this.titleTaks, title)
       .click(this.addTaskButton)
       .click(this.cancelTaskButton)
-  }
-
-  async openTask () {
-    await t.click(this.tomorrowTask)
+      .click(this.tomorrowTask)
   }
 }
 

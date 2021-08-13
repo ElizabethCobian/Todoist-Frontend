@@ -10,7 +10,7 @@ class basePage {
     this.deleteConfirmation = Selector('.ist_button.ist_button_red')
     // Elements
     this.todayTitle = Selector('h1, .view_header__content .simple_content').withExactText('Today')
-    this.taskCreated = Selector('.markdown_content.task_content').withExactText(TASKS.TASK_TITLES.TITLE)
+    this.taskName = Selector('.markdown_content.task_content').withExactText(TASKS.TASK_TITLES.TITLE)
     this.taskItems = Selector('.task_list_item')
     //Left-Menu
     this.upcomingSectionButton = Selector('.item_content').withExactText('Upcoming')
@@ -39,6 +39,7 @@ class basePage {
   async upcomingSection () {
     await t
       .click(this.upcomingSectionButton)
+      await this.deleteAllTasks()
   }
 
   // Function to click plus button to create a new project
