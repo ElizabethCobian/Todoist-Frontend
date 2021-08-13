@@ -8,6 +8,7 @@ class upcomingPage {
     this.titleTaks = Selector('.public-DraftStyleDefault-block.public-DraftStyleDefault-ltr')
     this.addTaskButton = Selector('button[type="submit"]')
     this.cancelTaskButton = Selector('button.reactist_button.reactist_button--secondary')
+    this.tomorrowLabel = Selector('.date.date_tom').withText('Tomorrow')
   }
 
   // Function to create new task for tomorrow
@@ -17,6 +18,10 @@ class upcomingPage {
       .typeText(this.titleTaks, title)
       .click(this.addTaskButton)
       .click(this.cancelTaskButton)
+  }
+
+  async openTask () {
+    await t.click(this.tomorrowTask)
   }
 }
 

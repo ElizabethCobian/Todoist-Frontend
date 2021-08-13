@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-class-members */
 import { Selector, t } from 'testcafe'
 import { TASKS } from '../data/Constants'
 
@@ -20,6 +21,9 @@ class basePage {
     //Left-Menu
     this.upcomingSectionButton = Selector('.item_content').withExactText('Upcoming')
     this.addNewProjectButton = Selector('button.adder_icon')
+    this.projectItems = Selector('.clickable.menu_clickable.indent_1')
+    this.projectIconMenu = Selector('.icon.menu.gear_menu')
+    this.projectDeleteOption = Selector('#menu_delete_text')
   }
 
   // Function to create a new task (today due date)
@@ -57,9 +61,9 @@ class basePage {
   }
 
   // Function to add the title to the new tasks craeted
-  async addNewTasks (taskNumber) {
+  async addNewTasks (taskTitle, taskNumber) {
     for (let i = 0; i < taskNumber; i++) {
-      await this.createTask(TASKS.TASK_TITLES.TITLE + i)
+      await this.createTask(taskTitle + i)
     }
   }
 
@@ -68,6 +72,20 @@ class basePage {
     const totalTask = await this.taskItems.count
 
     if (totalTask == taskNumber) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  async validateMultipleTasks (taskTitle, numberOfTasks) {
+    const totalTask = await this.taskItems.count
+
+    for (let i = 0; i < numberOfTasks; i++) {
+      await t.expect(this.taskItems.nth(i).innerText).contains(taskTitle + i)
+    }
+
+    if (totalTask == numberOfTasks) {
       return true
     } else {
       return false
@@ -100,6 +118,27 @@ class basePage {
     await t
       .click(this.addNewProjectButton)
     }
+
+      // Function to delete all the projects
+  async deleteProjects () {
+    const existingProject = await this.projectItems.count
+
+    if (existingProject > 0) {
+      for (let index = 0; index < existingProject; index++) {
+        await t
+          .hover(this.projectItems.nth(0))
+          .click(this.projectItems)
+          .click(this.projectIconMenu)
+          .click(this.projectDeleteOption)
+          .click(this.deleteConfirmation)
+      }
+    }
+  }
+
+  async clickOnProject () {
+    await t
+      .click(this.projectItems)
+  }
 }
 
 export default new basePage()

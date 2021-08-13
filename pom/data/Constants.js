@@ -23,14 +23,19 @@ export const MESSAGES = {
   }
 }
 export const PROJECT = {
-  PROJECT_NAME: 'My project'
+  FAVORITE_PROJECT: {
+    NAME: 'My project',
+    COLOR: 'Teal',
+    IS_FAVORITE: true
+  }
 }
 export const TASKS = {
   TASK_TITLES: {
-    TITLE: 'Test',
+    TITLE: 'Test'
   },
   TASK_NUMBER: {
-    NUMBER: 10
+    MAXIMO_NUMBER: 10,
+    MINIMO_NUMBER: 2
   }
 }
 export const TIMEOUTS = {
