@@ -7,6 +7,20 @@ This is a front-end automation project. In this repo, you'll find automation of 
 - NODE 14.17.3
 - TestCafe 6.14.13
 
+# Project Structure
+
+```
+├── ...
+├── pom                 # Page Object Model
+│   └── data            # Constants and Roles
+│   └── pages           # Pages including Base and Common
+│   └── tests           # All the tests (Only a fixture per file)
+├── package.json
+├── .env
+├── confi files
+└── ...
+```
+
 # How work with this project
 In order to work properly with this project, you need to start the TestCafe configuration:
 
