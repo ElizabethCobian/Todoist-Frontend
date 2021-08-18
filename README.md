@@ -10,7 +10,7 @@ This is a front-end automation project. In this repo, you'll find automation of 
 - NODE 14.17.3
 - TestCafe 6.14.13
 
-# Project Structure
+## Project Structure
 
 ```
 ├── ...
